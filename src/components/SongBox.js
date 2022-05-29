@@ -19,7 +19,7 @@ const SongBox = () => {
         </thead>
         <tbody>
             {songs.map((song, index)=>(
-                <tr key={song.id+"a"}><SongItem song={song} index={index}/></tr>
+                <tr key={song.id+"a"} style={{verticalAlign:"baseline"}}><SongItem song={song} index={index}/></tr>
             ))}
         </tbody>
         </table>
