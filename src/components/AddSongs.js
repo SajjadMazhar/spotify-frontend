@@ -1,12 +1,14 @@
 import React, { useContext } from 'react'
 import songContext from './context/SongContext'
+import {useNavigate} from 'react-router-dom'
 const AddSongs = () => {
     const {handleOnChange, handleSubmit} = useContext(songContext)
+    const navigate = useNavigate()
   return (
     <>
     <div className='container' style={{display:"flex", justifyContent:"center", marginTop:"4rem"}}><h1>Add Your Song From Here</h1></div>
     
-    <form style={{margin:"3rem 10rem"}} onSubmit={handleSubmit}>
+    <form style={{margin:"3rem 10rem"}} onSubmit={(e)=>handleSubmit(e, navigate)}>
   <div className="mb-3">
     <label htmlFor="songName" className="form-label">Song Name</label>
     <input type="text" className="form-control" placeholder='Song...' onChange={handleOnChange} name='songName' id="songName" aria-describedby="emailHelp"/>

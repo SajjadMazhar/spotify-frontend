@@ -3,7 +3,7 @@ import axios from 'axios'
 import songContext from './SongContext'
 import userContext from './UserContext'
 const SongState = ({children}) => {
-    const {changeIsLogin, isLogin} = useContext(userContext)
+    const {changeIsLogin} = useContext(userContext)
     const host = "http://localhost:3000"
     const [songs, setSongs] = useState([{name:"love me like you do", coverImg:"img", dateOfRelease:"12-12-2000"}])
     const [artists, setArtists] = useState([{name:'aarif', dob:"1970-01-01T00:00:00.000Z", bio:"aarif is good boy"}])
@@ -45,7 +45,7 @@ const SongState = ({children}) => {
       })
     }
     
-    const handleSubmit = async(e)=>{
+    const handleSubmit = async(e, navigate)=>{
       e.preventDefault()
       console.log(newArtistAndSong)
       const jsonData = {
@@ -56,12 +56,13 @@ const SongState = ({children}) => {
         "dob":new Date(newArtistAndSong.dob), 
         "bio":newArtistAndSong.bio 
       }
-      axios.post(`${host}/api/songs`, jsonData).then(()=>{
-        console.log("done")
-      }).catch(err=>{
-        console.log(err.message)
-      })
-      
+      try {
+        await axios.post(`${host}/api/songs`, jsonData)
+        navigate("/")
+        window.location.reload()
+      } catch (error) {
+        console.log(error.message)
+      }
       
     }
     
