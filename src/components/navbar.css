@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+li, a, button{
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 500px;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    
+}
+exampleInputPassword1
+li{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+
+}
+
+li:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+li::after{
+    content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    background-color: #313e5e;
+
+}
+
+
+.logo{
+    cursor: pointer;
+}
+
+.navRoutes{
+    list-style: none;
+}
+.navRoutes li{
+    display: inline-block;
+    padding: 0 10px;
+}
+.navRoutes li a{
+    transition: all 0.3 ease 0s;
+
+}
+
+
+.navRoutes li a:hover{
+     color:#0088a9
+}
+button{
+    padding: 9px 18px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    background-color: #313e5e;
+
+}
+.active, button:focus{
+    color: #3cacd7;
+}
+/* button:hover{
+    background-color:rgba(0, 136, 169, 0.8) ;
+} */
+
+#search[type=text]{
+    width: 25%;
+    box-sizing: border-box;
+    border-radius: 50px;
+    font-size: 16px;
+    color:#ccc;
+    padding: 12px 20px 12px 40px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 2px solid #0087ca;
+  }
+
+.toggle-button{
+    position:absolute;
+    top: 0.75em;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+}
+.toggle-button .bar{
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+  /* @media (max-width: 800px) {
+    .toggle-button{
+        display: flex;
+    }
+    header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    header img{
+        align-self: flex-start;
+    }
+    .navRoutes , #search{
+        display: none;
+        
+    }
+    button{
+        font-size: 30px;
+    }
+    .navRoutes {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+    .navRoutes li a{
+        padding: .5rem .1rem;
+    }
+    .navRoutes.active{
+        display: flex;
+    }
+    
+  } */
